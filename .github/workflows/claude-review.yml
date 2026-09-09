@@ -1,0 +1,33 @@
+name: Claude PR Review
+
+on:
+    pull_request:
+        types:
+            - opened
+            - synchronize
+            - reopened
+
+permissions:
+    contents: read
+    pull-requests: write
+    issues: write
+
+jobs:
+    review:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Claude review
+              uses: anthropics/claude-code-action@v1
+              with:
+                  anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+                  prompt: |
+                      Review this pull request.
+                      Report only concrete and actionable bugs,
+                      security problems, regressions, or incorrect Symfony
+                      and Doctrine usage.
