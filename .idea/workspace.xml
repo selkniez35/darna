@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94de8310-17f2-49c0-81f9-a10a6aa27c00" name="Changes" comment="Update workspace configuration to enhance GitHub Actions workflow for Claude PR review" />
+    <list default="true" id="94de8310-17f2-49c0-81f9-a10a6aa27c00" name="Changes" comment="Add Doctrine fixtures and migration for category and listing entities">
+      <change afterPath="$PROJECT_DIR$/.ai/mcp/mcp.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/secrets/dev/dev.decrypt.private.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20260909193719.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/CategoryFixtures.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/ListingFixtures.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/darna.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/darna.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +35,9 @@
             <execution>
               <execution>
                 <execution>
-                  <execution />
+                  <execution>
+                    <execution />
+                  </execution>
                 </execution>
               </execution>
             </execution>
@@ -43,25 +61,25 @@
     <option name="INCOMING_COMMITS_CHECK_STRATEGY" value="FETCH" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="80-implementer-les-entites-métier" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {}
-}]]></component>
-  <component name="GitHubPullRequestState"><![CDATA[{
-  "prStates": [
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
     {
-      "id": {
-        "id": "PR_kwDOULBuCM8AAAABCzM-xA",
-        "number": 2
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOULBuCM8AAAABCzM-xA&quot;,
+        &quot;number&quot;: 2
       },
-      "lastSeen": 1788949944639
+      &quot;lastSeen&quot;: 1788949944639
     }
   ]
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/selkniez35/darna.git&quot;,
@@ -271,6 +289,8 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
       <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
       <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -291,7 +311,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "#4 on 80-implementer-les-entites-métier",
+    "git-widget-placeholder": "81-creer-les-migrations-et-les-fixtures",
     "git.auto.fetch.suggestion.counter": "1",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "//wsl.localhost/Ubuntu/var/www/darna",
@@ -400,6 +420,7 @@
     <MESSAGE value="Add initial configuration files for PHP and version control" />
     <MESSAGE value="Enhance GitHub Actions workflow for Claude PR review with improved permissions and detailed analysis prompts" />
     <MESSAGE value="Update workspace configuration to enhance GitHub Actions workflow for Claude PR review" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update workspace configuration to enhance GitHub Actions workflow for Claude PR review" />
+    <MESSAGE value="Add Doctrine fixtures and migration for category and listing entities" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Doctrine fixtures and migration for category and listing entities" />
   </component>
 </project>
