@@ -2,35 +2,78 @@ name: Claude PR Review
 
 on:
     pull_request:
-        types: [opened, synchronize, reopened]
+        types:
+            - opened
+            - synchronize
+            - reopened
 
+# Permissions nécessaires :
+# - contents: lire le dépôt
+# - pull-requests: lire la PR et publier des commentaires
+# - issues: publier certains commentaires liés à la PR
+# - id-token: obtenir le token OIDC utilisé par l'action Claude
 permissions:
     contents: read
     pull-requests: write
     issues: write
     id-token: write
 
+concurrency:
+    group: claude-review-${{ github.event.pull_request.number }}
+    cancel-in-progress: true
+
 jobs:
     review:
+        name: Review with Claude
+        runs-on: ubuntu-latest
+
+        # Ces permissions peuvent aussi être définies au niveau du job.
         permissions:
             contents: read
             pull-requests: write
             issues: write
             id-token: write
 
-        runs-on: ubuntu-latest
-
         steps:
-            - name: Checkout
+            - name: Checkout repository
               uses: actions/checkout@v4
               with:
                   fetch-depth: 0
 
-            - name: Claude review
+            - name: Review pull request with Claude
               uses: anthropics/claude-code-action@v1
               with:
                   anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+
+                  # À conserver temporairement pour diagnostiquer une erreur.
+                  # À supprimer ensuite pour éviter des logs trop détaillés.
+                  show_full_output: true
+
                   prompt: |
-                      Review this pull request for concrete bugs,
-                      security issues, regressions and incorrect Symfony
-                      or Doctrine usage.
+                      Review this pull request for the Symfony project.
+
+                      Analyze the changes in the context of the whole repository.
+
+                      Report only concrete and actionable findings related to:
+                      - bugs and logic errors;
+                      - security vulnerabilities;
+                      - regressions;
+                      - incorrect Symfony usage;
+                      - incorrect Doctrine ORM usage;
+                      - invalid validation or authorization;
+                      - database migration risks;
+                      - missing tests for critical behavior.
+
+                      Ignore:
+                      - formatting preferences;
+                      - minor naming preferences;
+                      - purely subjective refactoring suggestions;
+                      - issues unrelated to the changed code.
+
+                      For every finding:
+                      - identify the file and relevant line;
+                      - explain the problem;
+                      - explain the impact;
+                      - suggest a precise correction.
+
+                      If no concrete issue is found, state that the pull request looks good.
