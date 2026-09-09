@@ -2,18 +2,22 @@ name: Claude PR Review
 
 on:
     pull_request:
-        types:
-            - opened
-            - synchronize
-            - reopened
+        types: [opened, synchronize, reopened]
 
 permissions:
     contents: read
     pull-requests: write
     issues: write
+    id-token: write
 
 jobs:
     review:
+        permissions:
+            contents: read
+            pull-requests: write
+            issues: write
+            id-token: write
+
         runs-on: ubuntu-latest
 
         steps:
@@ -27,7 +31,6 @@ jobs:
               with:
                   anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
                   prompt: |
-                      Review this pull request.
-                      Report only concrete and actionable bugs,
-                      security problems, regressions, or incorrect Symfony
-                      and Doctrine usage.
+                      Review this pull request for concrete bugs,
+                      security issues, regressions and incorrect Symfony
+                      or Doctrine usage.
