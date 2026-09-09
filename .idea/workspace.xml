@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94de8310-17f2-49c0-81f9-a10a6aa27c00" name="Changes" comment="Refactor GitHub Actions workflow for improved permissions and prompt clarity" />
+    <list default="true" id="94de8310-17f2-49c0-81f9-a10a6aa27c00" name="Changes" comment="Add initial configuration files for PHP and version control">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/claude-review.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/claude-review.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,7 +45,7 @@
     <option name="INCOMING_COMMITS_CHECK_STRATEGY" value="FETCH" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="80-implementer-les-entites-métier" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -291,7 +293,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "80-implementer-les-entites-métier",
+    "git-widget-placeholder": "#4 on 80-implementer-les-entites-métier",
     "git.auto.fetch.suggestion.counter": "1",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "//wsl.localhost/Ubuntu/var/www/darna",
@@ -328,7 +330,7 @@
       <workItem from="1788888480775" duration="471000" />
       <workItem from="1788888995857" duration="1168000" />
       <workItem from="1788941610296" duration="2964000" />
-      <workItem from="1788949523725" duration="757000" />
+      <workItem from="1788949523725" duration="1118000" />
     </task>
     <task id="LOCAL-00001" summary="Add Listing entity, controller, and form with CRUD functionality">
       <option name="closed" value="true" />
@@ -362,7 +364,15 @@
       <option name="project" value="LOCAL" />
       <updated>1788943805979</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add initial configuration files for PHP and version control">
+      <option name="closed" value="true" />
+      <created>1788950316939</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1788950316939</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,6 +383,7 @@
     <MESSAGE value="Introduce `ListingStatus` enum and refactor `Listing` entity to use it" />
     <MESSAGE value="Add GitHub Actions workflow for Claude PR review" />
     <MESSAGE value="Refactor GitHub Actions workflow for improved permissions and prompt clarity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor GitHub Actions workflow for improved permissions and prompt clarity" />
+    <MESSAGE value="Add initial configuration files for PHP and version control" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add initial configuration files for PHP and version control" />
   </component>
 </project>
