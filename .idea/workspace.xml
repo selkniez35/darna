@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94de8310-17f2-49c0-81f9-a10a6aa27c00" name="Changes" comment="Add Doctrine fixtures and migration for category and listing entities">
-      <change afterPath="$PROJECT_DIR$/.ai/mcp/mcp.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/secrets/dev/dev.decrypt.private.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20260909193719.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataFixtures/CategoryFixtures.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataFixtures/ListingFixtures.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/darna.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/darna.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +33,7 @@
     </execution>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="10004" />
+    <option name="cachedIndexableFilesCount" value="126" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -102,61 +88,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="3.0521012381952893E-114" />
-      <entry key="MS500" value="1.9811610770558118E-23" />
-      <entry key="S2" value="2.109744905046076E-6" />
-      <entry key="S5" value="0.005366510441586129" />
-      <entry key="S10" value="0.0732564703052647" />
-      <entry key="S30" value="0.41842329142112034" />
-      <entry key="S60" value="0.6475650035300238" />
-      <entry key="M2" value="0.8308992443056628" />
-      <entry key="M5" value="1.1510489023754031" />
-      <entry key="M10" value="1.4416112615574423" />
-      <entry key="M15" value="1.5880272816351944" />
-      <entry key="M30" value="1.7708556162058966" />
-      <entry key="H1" value="1.8789213670450544" />
-      <entry key="H2" value="1.9377346981218229" />
-      <entry key="H4" value="1.9684227642592391" />
-      <entry key="D1" value="1.9946742361156933" />
-      <entry key="W1" value="1.9992376212606655" />
-    </decayedCancelled>
-    <decayedSelected>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0" />
-      <entry key="S60" value="1.0" />
-      <entry key="M2" value="1.0" />
-      <entry key="M5" value="1.0" />
-      <entry key="M10" value="1.0" />
-      <entry key="M15" value="1.0" />
-      <entry key="M30" value="1.0" />
-      <entry key="H1" value="1.0" />
-      <entry key="H2" value="1.0" />
-      <entry key="H4" value="1.0" />
-      <entry key="D1" value="1.0" />
-      <entry key="W1" value="1.0" />
+      <entry key="S2" value="1.0000289415156" />
+      <entry key="S5" value="1.01529707895041" />
+      <entry key="S10" value="1.123681360561786" />
+      <entry key="S30" value="1.4982615854978147" />
+      <entry key="S60" value="1.710961712375734" />
+      <entry key="M2" value="1.9139180891501142" />
+      <entry key="M5" value="2.3696347494129437" />
+      <entry key="M10" value="2.8539598928677803" />
+      <entry key="M15" value="3.1268682856450827" />
+      <entry key="M30" value="3.4953048538381073" />
+      <entry key="H1" value="3.7274240091398196" />
+      <entry key="H2" value="3.8581853283762504" />
+      <entry key="H4" value="3.9276472466424877" />
+      <entry key="D1" value="3.9877347911956806" />
+      <entry key="W1" value="3.99824269658222" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="9.931144375791274E-84" />
+      <entry key="MS500" value="2.5084262315219744E-17" />
+      <entry key="S2" value="7.380801310278318E-5" />
+      <entry key="S5" value="0.028083693740434443" />
+      <entry key="S10" value="0.22669846527402265" />
+      <entry key="S30" value="0.9576186729079166" />
+      <entry key="S60" value="1.3898597600721858" />
+      <entry key="M2" value="1.7507203397905124" />
+      <entry key="M5" value="2.236665838511928" />
+      <entry key="M10" value="2.5432969165294113" />
+      <entry key="M15" value="2.6752088281075457" />
+      <entry key="M30" value="2.826337359158917" />
+      <entry key="H1" value="2.910123004867182" />
+      <entry key="H2" value="2.95426941041501" />
+      <entry key="H4" value="2.976932711396127" />
+      <entry key="D1" value="2.9961270536213016" />
+      <entry key="W1" value="2.999446021952782" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="6.845069708156487E-13" />
-      <entry key="MS500" value="0.003690418128895337" />
-      <entry key="S2" value="0.24647401676620218" />
-      <entry key="S5" value="0.5754832274418785" />
-      <entry key="S10" value="0.8219592217017712" />
-      <entry key="S30" value="1.315496652393028" />
-      <entry key="S60" value="1.5911880112972288" />
-      <entry key="M2" value="1.8007192217731867" />
-      <entry key="M5" value="2.13727279179731" />
-      <entry key="M10" value="2.433885755699889" />
-      <entry key="M15" value="2.5825907843964644" />
-      <entry key="M30" value="2.767957464809866" />
-      <entry key="H1" value="2.8774188891300554" />
-      <entry key="H2" value="2.9369688984001154" />
-      <entry key="H4" value="2.96803606196764" />
-      <entry key="D1" value="2.99460924330758" />
-      <entry key="W1" value="2.999228323099529" />
+      <entry key="MS100" value="4.5875134238965425E-4" />
+      <entry key="MS500" value="0.2149391215607516" />
+      <entry key="S2" value="0.6809442417253325" />
+      <entry key="S5" value="0.8911888893011605" />
+      <entry key="S10" value="1.2364334049287415" />
+      <entry key="S30" value="2.3747013172846785" />
+      <entry key="S60" value="3.047503059715111" />
+      <entry key="M2" value="3.6314972811830786" />
+      <entry key="M5" value="4.587768679316948" />
+      <entry key="M10" value="5.385645296677821" />
+      <entry key="M15" value="5.79352730405812" />
+      <entry key="M30" value="6.316846287663664" />
+      <entry key="H1" value="6.634990300455289" />
+      <entry key="H2" value="6.811132391806203" />
+      <entry key="H4" value="6.903907194422398" />
+      <entry key="D1" value="6.983748054728575" />
+      <entry key="W1" value="6.997672421374232" />
     </decayedShown>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
@@ -406,7 +392,15 @@
       <option name="project" value="LOCAL" />
       <updated>1788950994112</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add Doctrine fixtures and migration for category and listing entities">
+      <option name="closed" value="true" />
+      <created>1788983288603</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1788983288603</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
