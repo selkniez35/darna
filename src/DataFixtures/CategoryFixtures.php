@@ -12,6 +12,7 @@ final class CategoryFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         $realEstate = new Category();
+
         $realEstate->setName('Immobilier');
         $realEstate->setSlug('immobilier');
         $realEstate->setPosition(1);

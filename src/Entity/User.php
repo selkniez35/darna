@@ -40,7 +40,7 @@ class User
     private ?bool $isActive = null;
 
     #[ORM\Column]
-    private ?DateTimeImmutable $createAt = null;
+    private ?DateTimeImmutable $createdAt = null;
 
     #[ORM\Column]
     private ?DateTimeImmutable $updatedAt = null;
@@ -146,14 +146,14 @@ class User
         return $this;
     }
 
-    public function getCreateAt(): ?DateTimeImmutable
+    public function getCreatedAt(): ?DateTimeImmutable
     {
-        return $this->createAt;
+        return $this->createdAt;
     }
 
-    public function setCreateAt(DateTimeImmutable $createAt): static
+    public function setCreatedAt(DateTimeImmutable $createdAt): static
     {
-        $this->createAt = $createAt;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
