@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94de8310-17f2-49c0-81f9-a10a6aa27c00" name="Changes" comment="Rename `createAt` field to `createdAt` in `User` entity, update related methods, fixtures, and add migration.">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20260922145702.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/CategoryFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/CategoryFixtures.php" afterDir="false" />
+    <list default="true" id="94de8310-17f2-49c0-81f9-a10a6aa27c00" name="Changes" comment="Rename `createAt` to `createdAt` in `User` entity, update fixtures, related methods, and add migration.">
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/ListingFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/ListingFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -293,6 +290,9 @@
       <path value="$PROJECT_DIR$/vendor/pentatrion/vite-bundle" />
     </include_path>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7,
   &quot;fromUser&quot;: false
@@ -355,7 +355,7 @@
       <workItem from="1788941610296" duration="2964000" />
       <workItem from="1788949523725" duration="2003000" />
       <workItem from="1790016701547" duration="454000" />
-      <workItem from="1790081464070" duration="8680000" />
+      <workItem from="1790081464070" duration="9002000" />
     </task>
     <task id="LOCAL-00001" summary="Add Listing entity, controller, and form with CRUD functionality">
       <option name="closed" value="true" />
@@ -445,7 +445,15 @@
       <option name="project" value="LOCAL" />
       <updated>1790087703578</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Rename `createAt` to `createdAt` in `User` entity, update fixtures, related methods, and add migration.">
+      <option name="closed" value="true" />
+      <created>1790096561891</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1790096561891</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,7 +472,8 @@
     <MESSAGE value="Migrate from Symfony AssetMapper to Vite, updating bootstrap and configuration files" />
     <MESSAGE value="Update category entity, fixtures, and dependencies for improved structure and relationships" />
     <MESSAGE value="Rename `createAt` field to `createdAt` in `User` entity, update related methods, fixtures, and add migration." />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename `createAt` field to `createdAt` in `User` entity, update related methods, fixtures, and add migration." />
+    <MESSAGE value="Rename `createAt` to `createdAt` in `User` entity, update fixtures, related methods, and add migration." />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename `createAt` to `createdAt` in `User` entity, update fixtures, related methods, and add migration." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
