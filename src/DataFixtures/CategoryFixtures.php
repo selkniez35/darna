@@ -11,28 +11,32 @@ final class CategoryFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        $immobilier = new Category();
-        $immobilier->setName('Immobilier');
-        $immobilier->setSlug('immobilier');
-        $immobilier->setPosition(1);
-        $immobilier->setIsActive(true);
+        $realEstate = new Category();
+        $realEstate->setName('Immobilier');
+        $realEstate->setSlug('immobilier');
+        $realEstate->setPosition(1);
+        $realEstate->setIsActive(true);
 
         $now = new DateTimeImmutable();
 
-        $immobilier->setCreatedAt($now);
-        $immobilier->setUpdatedAt($now);
+        $realEstate->setCreatedAt($now);
+        $realEstate->setUpdatedAt($now);
 
-        $vehicules = new Category();
-        $vehicules->setName('Véhicules');
-        $vehicules->setSlug('vehicules');
-        $vehicules->setPosition(2);
-        $vehicules->setIsActive(true);
+        $vehicles = new Category();
+        $vehicles->setName('Véhicules');
+        $vehicles->setSlug('vehicles');
+        $vehicles->setPosition(2);
+        $vehicles->setIsActive(true);
 
-        $vehicules->setCreatedAt($now);
-        $vehicules->setUpdatedAt($now);
+        $vehicles->setCreatedAt($now);
+        $vehicles->setUpdatedAt($now);
 
-        $manager->persist($immobilier);
-        $manager->persist($vehicules);
+        $manager->persist($realEstate);
+        $this->addReference('category_immobilier', $realEstate);
+
+        $manager->persist($vehicles);
+        $this->addReference('category_vehicules', $vehicles);
+
         $manager->flush();
     }
 }
