@@ -4,25 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94de8310-17f2-49c0-81f9-a10a6aa27c00" name="Changes" comment="Replace Asset Mapper with Vite, migrate database to MariaDB, and update related configurations.">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/darna.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/darna.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="94de8310-17f2-49c0-81f9-a10a6aa27c00" name="Changes" comment="Migrate from Symfony AssetMapper to Vite, updating bootstrap and configuration files">
+      <change afterPath="$PROJECT_DIR$/assets/hot-reload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/idiomorph-global.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/pentatrion_vite.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vite.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/stimulus_bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.override.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.override.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/asset_mapper.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/reference.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/reference.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/importmap.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/stimulus_bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/bootstrap.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +31,9 @@
                   <execution>
                     <execution>
                       <execution>
-                        <execution />
+                        <execution>
+                          <execution />
+                        </execution>
                       </execution>
                     </execution>
                   </execution>
@@ -55,7 +47,6 @@
   </component>
   <component name="EmbeddingIndexingInfo">
     <option name="cachedIndexableFilesCount" value="126" />
-    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -87,22 +78,22 @@
     }
   ]
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/selkniez35/darna.git&quot;,
-    &quot;accountId&quot;: &quot;fa6553fd-ecc9-4e68-97d3-d297f7a0752c&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/selkniez35/darna.git",
+    "accountId": "57965208-e1d5-41a1-8b20-bf35926e3e6d"
   },
-  &quot;recentNewPullRequestHead&quot;: {
-    &quot;server&quot;: {
-      &quot;useHttp&quot;: false,
-      &quot;host&quot;: &quot;github.com&quot;,
-      &quot;port&quot;: null,
-      &quot;suffix&quot;: null
+  "recentNewPullRequestHead": {
+    "server": {
+      "useHttp": false,
+      "host": "github.com",
+      "port": null,
+      "suffix": null
     },
-    &quot;owner&quot;: &quot;selkniez35&quot;,
-    &quot;repository&quot;: &quot;darna&quot;
+    "owner": "selkniez35",
+    "repository": "darna"
   }
-}</component>
+}]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -357,7 +348,8 @@
       <workItem from="1788888995857" duration="1168000" />
       <workItem from="1788941610296" duration="2964000" />
       <workItem from="1788949523725" duration="2003000" />
-      <workItem from="1790016701547" duration="156000" />
+      <workItem from="1790016701547" duration="454000" />
+      <workItem from="1790081464070" duration="1498000" />
     </task>
     <task id="LOCAL-00001" summary="Add Listing entity, controller, and form with CRUD functionality">
       <option name="closed" value="true" />
@@ -423,7 +415,15 @@
       <option name="project" value="LOCAL" />
       <updated>1788983288603</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Migrate from Symfony AssetMapper to Vite, updating bootstrap and configuration files">
+      <option name="closed" value="true" />
+      <created>1790017082838</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1790017082838</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,7 +439,8 @@
     <MESSAGE value="Update workspace configuration to enhance GitHub Actions workflow for Claude PR review" />
     <MESSAGE value="Add Doctrine fixtures and migration for category and listing entities" />
     <MESSAGE value="Replace Asset Mapper with Vite, migrate database to MariaDB, and update related configurations." />
-    <option name="LAST_COMMIT_MESSAGE" value="Replace Asset Mapper with Vite, migrate database to MariaDB, and update related configurations." />
+    <MESSAGE value="Migrate from Symfony AssetMapper to Vite, updating bootstrap and configuration files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Migrate from Symfony AssetMapper to Vite, updating bootstrap and configuration files" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
