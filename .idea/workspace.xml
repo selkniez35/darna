@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94de8310-17f2-49c0-81f9-a10a6aa27c00" name="Changes" comment="Rename `createAt` to `createdAt` in `User` entity, update fixtures, related methods, and add migration.">
+    <list default="true" id="94de8310-17f2-49c0-81f9-a10a6aa27c00" name="Changes" comment="Add fixtures for Listing and User entities, updating data seeding logic">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/ListingFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/ListingFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,22 +80,22 @@
     }
   ]
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/selkniez35/darna.git",
-    "accountId": "57965208-e1d5-41a1-8b20-bf35926e3e6d"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/selkniez35/darna.git&quot;,
+    &quot;accountId&quot;: &quot;57965208-e1d5-41a1-8b20-bf35926e3e6d&quot;
   },
-  "recentNewPullRequestHead": {
-    "server": {
-      "useHttp": false,
-      "host": "github.com",
-      "port": null,
-      "suffix": null
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
     },
-    "owner": "selkniez35",
-    "repository": "darna"
+    &quot;owner&quot;: &quot;selkniez35&quot;,
+    &quot;repository&quot;: &quot;darna&quot;
   }
-}]]></component>
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -100,60 +103,60 @@
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000084302099976" />
-      <entry key="S2" value="1.0538839715635997" />
-      <entry key="S5" value="1.3108735977413906" />
-      <entry key="S10" value="1.5575603997434992" />
-      <entry key="S30" value="1.8241911184508142" />
-      <entry key="S60" value="1.940881861828304" />
-      <entry key="M2" value="2.135940233906215" />
-      <entry key="M5" value="2.488734523158361" />
-      <entry key="M10" value="2.7838004925858657" />
-      <entry key="M15" value="3.2384880649587484" />
-      <entry key="M30" value="5.564533488192729" />
-      <entry key="H1" value="10.104643228715737" />
-      <entry key="H2" value="15.249579870015356" />
-      <entry key="H4" value="19.32090445142686" />
-      <entry key="D1" value="23.913912220771834" />
-      <entry key="W1" value="24.840983081191382" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0" />
+      <entry key="S60" value="1.0" />
+      <entry key="M2" value="1.0" />
+      <entry key="M5" value="1.0000000000002354" />
+      <entry key="M10" value="1.0000008562245204" />
+      <entry key="M15" value="1.0001475622730789" />
+      <entry key="M30" value="1.0375617033337619" />
+      <entry key="H1" value="1.8301933363326128" />
+      <entry key="H2" value="5.37106242001663" />
+      <entry key="H4" value="11.344083497371445" />
+      <entry key="D1" value="22.5490464963437" />
+      <entry key="W1" value="25.47419474873127" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
-      <entry key="S5" value="6.766306462252352E-261" />
-      <entry key="S10" value="1.1109233777319205E-130" />
-      <entry key="S30" value="1.0188419169605682E-43" />
-      <entry key="S60" value="6.84964546609539E-22" />
-      <entry key="M2" value="6.147391874940473E-11" />
-      <entry key="M5" value="2.415471688101322E-4" />
-      <entry key="M10" value="0.039565216332280786" />
-      <entry key="M15" value="0.22150983095052823" />
-      <entry key="M30" value="1.3294848484329729" />
-      <entry key="H1" value="3.562097988296385" />
-      <entry key="H2" value="6.1182740364711865" />
-      <entry key="H4" value="8.152043389964588" />
-      <entry key="D1" value="10.454526356700182" />
-      <entry key="W1" value="10.920114062819879" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="5.84921891351015E-174" />
+      <entry key="S60" value="5.1899554375588395E-87" />
+      <entry key="M2" value="1.6921492531588682E-43" />
+      <entry key="M5" value="2.2850781552472212E-17" />
+      <entry key="M10" value="1.216922996755863E-8" />
+      <entry key="M15" value="1.0093134051674073E-5" />
+      <entry key="M30" value="0.008974286086970706" />
+      <entry key="H1" value="0.29266050728476023" />
+      <entry key="H2" value="1.7537111149381277" />
+      <entry key="H4" value="4.3644653236593784" />
+      <entry key="D1" value="9.42066996307272" />
+      <entry key="W1" value="10.758873647563986" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.8408964152537145" />
-      <entry key="MS500" value="0.9659427533553389" />
-      <entry key="S2" value="1.041718355653209" />
-      <entry key="S5" value="1.2990807232391237" />
-      <entry key="S10" value="1.5483054149919084" />
-      <entry key="S30" value="1.8198893100817022" />
-      <entry key="S60" value="1.938459263113365" />
-      <entry key="M2" value="2.134494646017326" />
-      <entry key="M5" value="2.4882243899460366" />
-      <entry key="M10" value="2.822721710961303" />
-      <entry key="M15" value="3.4588551324212604" />
-      <entry key="M30" value="6.8911837786236685" />
-      <entry key="H1" value="13.662978442060885" />
-      <entry key="H2" value="21.364621020337385" />
-      <entry key="H4" value="27.47079369783839" />
-      <entry key="D1" value="34.36797818987909" />
-      <entry key="W1" value="35.7610284481991" />
+      <entry key="MS100" value="0.3842187953220031" />
+      <entry key="MS500" value="0.8258776649357199" />
+      <entry key="S2" value="0.9532985452881589" />
+      <entry key="S5" value="0.9810509713700406" />
+      <entry key="S10" value="0.9904801721236224" />
+      <entry key="S30" value="0.9968166007640673" />
+      <entry key="S60" value="0.9984070316078845" />
+      <entry key="M2" value="0.9992031983575135" />
+      <entry key="M5" value="0.9996812031237045" />
+      <entry key="M10" value="0.9998414570514514" />
+      <entry key="M15" value="1.0000513264170192" />
+      <entry key="M30" value="1.046463715720846" />
+      <entry key="H1" value="2.122518125284333" />
+      <entry key="H2" value="7.123833591592758" />
+      <entry key="H4" value="15.707388886586932" />
+      <entry key="D1" value="31.969300492807818" />
+      <entry key="W1" value="36.23300055664921" />
     </decayedShown>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
@@ -302,37 +305,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "81-creer-les-migrations-et-les-fixtures",
-    "git.auto.fetch.suggestion.counter": "1",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "//wsl.localhost/Ubuntu/var/www/darna",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "proofread",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;81-creer-les-migrations-et-les-fixtures&quot;,
+    &quot;git.auto.fetch.suggestion.counter&quot;: &quot;1&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu/var/www/darna&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;proofread&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb",
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;,
+      &quot;mysql&quot;
     ],
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "TEXT"
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;TEXT&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -355,7 +358,7 @@
       <workItem from="1788941610296" duration="2964000" />
       <workItem from="1788949523725" duration="2003000" />
       <workItem from="1790016701547" duration="454000" />
-      <workItem from="1790081464070" duration="9002000" />
+      <workItem from="1790081464070" duration="10786000" />
     </task>
     <task id="LOCAL-00001" summary="Add Listing entity, controller, and form with CRUD functionality">
       <option name="closed" value="true" />
@@ -453,7 +456,15 @@
       <option name="project" value="LOCAL" />
       <updated>1790096561891</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Add fixtures for Listing and User entities, updating data seeding logic">
+      <option name="closed" value="true" />
+      <created>1790096980483</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1790096980483</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -473,7 +484,8 @@
     <MESSAGE value="Update category entity, fixtures, and dependencies for improved structure and relationships" />
     <MESSAGE value="Rename `createAt` field to `createdAt` in `User` entity, update related methods, fixtures, and add migration." />
     <MESSAGE value="Rename `createAt` to `createdAt` in `User` entity, update fixtures, related methods, and add migration." />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename `createAt` to `createdAt` in `User` entity, update fixtures, related methods, and add migration." />
+    <MESSAGE value="Add fixtures for Listing and User entities, updating data seeding logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add fixtures for Listing and User entities, updating data seeding logic" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

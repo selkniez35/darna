@@ -18,7 +18,7 @@ class ListingFixtures extends Fixture implements DependentFixtureInterface
         $now = new DateTimeImmutable();
 
         $immobilier = $this->getReference('category_immobilier', Category::class);
-        $vehicules = $this->getReference('category_vehicules', Category::class);
+        $vehicles = $this->getReference('category_vehicules', Category::class);
         $seller1 = $this->getReference('user_1', User::class);
         $seller2 = $this->getReference('user_2', User::class);
 
@@ -41,7 +41,7 @@ class ListingFixtures extends Fixture implements DependentFixtureInterface
         $listing2->setCity('Lyon');
         $listing2->setStatus(ListingStatus::PUBLISHED);
         $listing2->setSeller($seller2);
-        $listing2->setCategory($vehicules);
+        $listing2->setCategory($vehicles);
         $listing2->setCreatedAt($now);
         $listing2->setUpdatedAt($now);
         $listing2->setPublishedAt($now);
