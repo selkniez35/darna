@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94de8310-17f2-49c0-81f9-a10a6aa27c00" name="Changes" comment="Update User entity to implement UserInterface and PasswordAuthenticatedUserInterface, modify UserFixtures for password hashing, and adjust ListingFixtures for category reference">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/claude-review.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/claude-review.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="94de8310-17f2-49c0-81f9-a10a6aa27c00" name="Changes" comment="Add CI workflow for pull request and push actions with PHP, MariaDB setup, and PHPUnit tests; enhance Claude review workflow with database support and test verification." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -358,7 +355,7 @@
       <workItem from="1788949523725" duration="2003000" />
       <workItem from="1790016701547" duration="454000" />
       <workItem from="1790081464070" duration="11450000" />
-      <workItem from="1790143916386" duration="2608000" />
+      <workItem from="1790143916386" duration="3251000" />
     </task>
     <task id="LOCAL-00001" summary="Add Listing entity, controller, and form with CRUD functionality">
       <option name="closed" value="true" />
@@ -472,7 +469,15 @@
       <option name="project" value="LOCAL" />
       <updated>1790106696903</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Add CI workflow for pull request and push actions with PHP, MariaDB setup, and PHPUnit tests; enhance Claude review workflow with database support and test verification.">
+      <option name="closed" value="true" />
+      <created>1790152614678</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1790152614679</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,7 +499,8 @@
     <MESSAGE value="Rename `createAt` to `createdAt` in `User` entity, update fixtures, related methods, and add migration." />
     <MESSAGE value="Add fixtures for Listing and User entities, updating data seeding logic" />
     <MESSAGE value="Update User entity to implement UserInterface and PasswordAuthenticatedUserInterface, modify UserFixtures for password hashing, and adjust ListingFixtures for category reference" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update User entity to implement UserInterface and PasswordAuthenticatedUserInterface, modify UserFixtures for password hashing, and adjust ListingFixtures for category reference" />
+    <MESSAGE value="Add CI workflow for pull request and push actions with PHP, MariaDB setup, and PHPUnit tests; enhance Claude review workflow with database support and test verification." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add CI workflow for pull request and push actions with PHP, MariaDB setup, and PHPUnit tests; enhance Claude review workflow with database support and test verification." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

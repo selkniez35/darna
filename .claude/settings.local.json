@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mysql *)",
+      "Bash(php bin/console dbal:run-sql \"SELECT 1\")",
+      "Bash(php bin/console doctrine:schema:validate)",
+      "Bash(php *)"
+    ]
+  }
+}
