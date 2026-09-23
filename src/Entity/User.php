@@ -5,17 +5,21 @@ namespace App\Entity;
 use App\Repository\UserRepository;
 use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
-class User
+#[UniqueEntity(fields: ['email'])]
+class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 180)]
+    #[ORM\Column(length: 180, unique: true)]
     private ?string $email = null;
 
     #[ORM\Column(length: 255)]
@@ -40,7 +44,7 @@ class User
     private ?bool $isActive = null;
 
     #[ORM\Column]
-    private ?DateTimeImmutable $createAt = null;
+    private ?DateTimeImmutable $createdAt = null;
 
     #[ORM\Column]
     private ?DateTimeImmutable $updatedAt = null;
@@ -62,6 +66,11 @@ class User
         return $this;
     }
 
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->email;
+    }
+
     public function getPassword(): ?string
     {
         return $this->password;
@@ -74,9 +83,17 @@ class User
         return $this;
     }
 
+    public function eraseCredentials(): void
+    {
+        // rien à effacer ici, pas de champ temporaire en clair stocké sur l'entité
+    }
+
     public function getRoles(): array
     {
-        return $this->roles;
+        $roles = $this->roles;
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
     }
 
     public function setRoles(array $roles): static
@@ -146,14 +163,14 @@ class User
         return $this;
     }
 
-    public function getCreateAt(): ?DateTimeImmutable
+    public function getCreatedAt(): ?DateTimeImmutable
     {
-        return $this->createAt;
+        return $this->createdAt;
     }
 
-    public function setCreateAt(DateTimeImmutable $createAt): static
+    public function setCreatedAt(DateTimeImmutable $createdAt): static
     {
-        $this->createAt = $createAt;
+        $this->createdAt = $createdAt;
 
         return $this;
     }

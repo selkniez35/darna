@@ -1,4 +1,4 @@
-import { startStimulusApp } from '@symfony/stimulus-bundle';
+import { startStimulusApp } from 'vite-plugin-symfony/stimulus/helpers';
 
 const app = startStimulusApp();
 // register any custom, 3rd party controllers here
