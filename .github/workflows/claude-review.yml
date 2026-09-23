@@ -8,12 +8,12 @@ on:
             - reopened
 
 # Permissions nécessaires :
-# - contents: lire le dépôt et pousser les corrections de Claude sur la branche de la PR
+# - contents: lire le dépôt (Claude ne pousse rien, il propose des suggestions)
 # - pull-requests: lire la PR et publier des commentaires
 # - issues: publier certains commentaires liés à la PR
 # - id-token: obtenir le token OIDC utilisé par l'action Claude
 permissions:
-    contents: write
+    contents: read
     pull-requests: write
     issues: write
     id-token: write
@@ -27,15 +27,12 @@ jobs:
         name: Review with Claude
         runs-on: ubuntu-latest
 
-        # - Ignore les PR venant de forks (pas d'accès aux secrets ni en écriture).
-        # - Ignore les pushs faits par Claude lui-même pour éviter une boucle de revues.
-        if: >-
-            github.event.pull_request.head.repo.full_name == github.repository
-            && github.actor != 'claude[bot]'
+        # Ignore les PR venant de forks (pas d'accès aux secrets).
+        if: github.event.pull_request.head.repo.full_name == github.repository
 
         # Ces permissions peuvent aussi être définies au niveau du job.
         permissions:
-            contents: write
+            contents: read
             pull-requests: write
             issues: write
             id-token: write
@@ -60,14 +57,16 @@ jobs:
         env:
             APP_ENV: test
             DATABASE_URL: 'mysql://root:!ChangeMe!@127.0.0.1:3306/app?serverVersion=10.11.2-MariaDB&charset=utf8mb4'
+            # Fichier où Claude écrit son verdict, lu par l'étape « Enforce Claude verdict ».
+            VERDICT_FILE: claude-verdict.txt
 
         steps:
-            # On se place sur la branche de la PR (et non sur le commit de merge)
-            # pour que Claude puisse y pousser ses corrections.
+            # On se place sur le dernier commit de la PR pour que les numéros de ligne
+            # des suggestions correspondent au code de la PR.
             - name: Checkout repository
               uses: actions/checkout@v4
               with:
-                  ref: ${{ github.head_ref }}
+                  ref: ${{ github.event.pull_request.head.sha }}
                   fetch-depth: 0
 
             - name: Setup PHP
@@ -77,6 +76,13 @@ jobs:
                   extensions: ctype, iconv, intl, pdo_mysql
                   tools: composer:v2
                   coverage: none
+
+            - name: Cache Composer dependencies
+              uses: actions/cache@v4
+              with:
+                  path: ~/.cache/composer
+                  key: composer-${{ hashFiles('composer.lock') }}
+                  restore-keys: composer-
 
             - name: Install dependencies
               run: composer install --no-interaction --no-progress --prefer-dist
@@ -92,15 +98,15 @@ jobs:
                   # Jeton OAuth de l'abonnement Claude (généré via `claude setup-token`).
                   claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
 
-                  # Outils autorisés : lecture/édition de fichiers, commandes Symfony/PHPUnit
-                  # pour vérifier, et commandes git pour committer et pousser sur la PR.
+                  # Outils autorisés : lecture du code, édition locale pour tester une correction
+                  # (jamais committée : aucune commande git d'écriture n'est autorisée),
+                  # commandes Symfony/PHPUnit pour vérifier, et commentaires sur la PR.
                   claude_args: |
-                      --allowedTools "Read,Edit,Write,Glob,Grep,Bash(vendor/bin/phpunit:*),Bash(php bin/console:*),Bash(php -l:*),Bash(git status:*),Bash(git diff:*),Bash(git log:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),mcp__github_inline_comment__create_inline_comment"
+                      --allowedTools "Read,Edit,Write,Glob,Grep,Bash(vendor/bin/phpunit:*),Bash(php bin/console:*),Bash(php -l:*),Bash(git status:*),Bash(git diff:*),Bash(git log:*),Bash(git checkout:*),Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),mcp__github_inline_comment__create_inline_comment"
 
                   prompt: |
                       REPO: ${{ github.repository }}
                       PR NUMBER: ${{ github.event.pull_request.number }}
-                      BRANCH: ${{ github.head_ref }}
 
                       Review this pull request for the Symfony project.
 
@@ -122,25 +128,60 @@ jobs:
                       - purely subjective refactoring suggestions;
                       - issues unrelated to the changed code.
 
-                      Fixing issues:
-                      - Fix directly every issue whose correction is clear, local and low risk.
-                      - Never modify existing migration files that may already have been
-                        executed; never touch .github/, .env*, secrets or composer.lock.
-                      - PHP 8.4, Composer dependencies and a MariaDB test database (migrated)
-                        are available. After your fixes and before committing, verify with:
-                        `php bin/console lint:container`, `php bin/console doctrine:schema:validate`,
-                        `php bin/console doctrine:fixtures:load --no-interaction` and
-                        `vendor/bin/phpunit` (if tests exist). If a check fails because of your
-                        changes, fix it or revert them; never push code that breaks these checks.
-                      - Group your fixes in a single commit on branch ${{ github.head_ref }},
-                        with a message starting with "fix(review):" describing the changes,
-                        then push it to origin.
-                      - For issues you did not fix (risky, ambiguous or requiring a design
-                        decision), leave an inline comment on the relevant line explaining
-                        the problem, its impact and a precise correction.
+                      You must NOT commit or push anything. The PR author accepts each fix manually.
 
-                      Finally, post a summary comment on the PR (in French) with `gh pr comment`:
-                      - the list of fixes you committed (file, line, why), or "Aucune correction";
-                      - the list of remaining issues left as inline comments;
+                      For every issue, leave an inline comment on the relevant line (in French)
+                      explaining the problem and its impact:
+                      - When the fix is local to the commented lines, include it as a GitHub
+                        suggestion block (```suggestion ... ```) replacing exactly those lines,
+                        so the author can apply it with "Commit suggestion".
+                      - Otherwise, describe the precise correction to make.
+                      - Never suggest changes to existing migration files that may already have
+                        been executed, nor to .github/, .env*, secrets or composer.lock.
+
+                      PHP 8.4, Composer dependencies and a migrated MariaDB test database are
+                      available. Run `php bin/console lint:container`,
+                      `php bin/console doctrine:schema:validate`,
+                      `php bin/console doctrine:fixtures:load --no-interaction` and
+                      `vendor/bin/phpunit` (if tests exist). You may apply a fix locally to check
+                      that it works, but restore the files afterwards with `git checkout -- <file>`.
+
+                      Then post a summary comment on the PR (in French) with `gh pr comment`:
+                      - the list of issues found (file, line, why), or "Aucun problème";
                       - the checks you ran and their result;
                       - a clear verdict: "✅ PR prête à merger" or "⚠️ À corriger avant merge".
+
+                      Finally, write the verdict to the file `claude-verdict.txt` at the repository
+                      root, containing exactly one word:
+                      - APPROVED if no issue remains;
+                      - CHANGES_REQUESTED if at least one issue must be fixed before merging.
+                      This file is read by the next CI step: CHANGES_REQUESTED fails the check
+                      and blocks the merge.
+
+            # Rend la revue bloquante : le check échoue si Claude demande des corrections
+            # ou n'a pas rendu de verdict.
+            # Exception : si la PR modifie ce workflow, l'action Claude refuse de tourner
+            # (sécurité) ; le check passe alors avec un avertissement et la PR doit être
+            # relue manuellement.
+            - name: Enforce Claude verdict
+              env:
+                  BASE_REF: ${{ github.base_ref }}
+              run: |
+                  if ! git diff --quiet "origin/${BASE_REF}" -- .github/workflows/claude-review.yml; then
+                      echo "::warning::Cette PR modifie le workflow de review : Claude ne l'a pas relue, relecture manuelle requise."
+                      exit 0
+                  fi
+                  verdict="$(tr -d '[:space:]' < "$VERDICT_FILE" 2>/dev/null || true)"
+                  case "$verdict" in
+                      APPROVED)
+                          echo "Claude a approuvé la PR."
+                          ;;
+                      CHANGES_REQUESTED)
+                          echo "::error::Claude demande des corrections : voir les commentaires de la PR."
+                          exit 1
+                          ;;
+                      *)
+                          echo "::error::Aucun verdict valide rendu par Claude (valeur : '${verdict}')."
+                          exit 1
+                          ;;
+                  esac
