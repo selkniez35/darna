@@ -20,7 +20,7 @@ class UserType extends AbstractType
             ->add('city')
             ->add('isVerified')
             ->add('isActive')
-            ->add('createAt', null, [
+            ->add('createdAt', null, [
                 'widget' => 'single_text',
             ])
             ->add('updatedAt', null, [
