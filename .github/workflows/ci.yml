@@ -81,7 +81,12 @@ jobs:
               run: php bin/console doctrine:schema:validate
 
             - name: Load fixtures
-              run: php bin/console doctrine:fixtures:load --no-interaction
+              run: |
+                  if [ -d src/DataFixtures ]; then
+                      php bin/console doctrine:fixtures:load --no-interaction
+                  else
+                      echo "::notice::Aucune fixture trouvée dans src/DataFixtures"
+                  fi
 
             - name: Run PHPUnit
               run: |
