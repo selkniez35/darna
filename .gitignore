@@ -24,3 +24,7 @@
 /public/build/
 /.vite/
 ###< vite ###
+
+###> claude-code ###
+/.claude/settings.local.json
+###< claude-code ###
