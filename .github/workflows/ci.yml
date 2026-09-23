@@ -1,0 +1,92 @@
+name: CI
+
+on:
+    pull_request:
+    push:
+        branches:
+            - develop
+
+permissions:
+    contents: read
+
+concurrency:
+    group: ci-${{ github.event.pull_request.number || github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    tests:
+        name: PHP tests
+        runs-on: ubuntu-latest
+
+        # Base MariaDB identique à compose.yaml, utilisée pour les migrations,
+        # les fixtures et les tests.
+        services:
+            database:
+                image: mariadb:10.11
+                env:
+                    MARIADB_DATABASE: app
+                    MARIADB_USER: app
+                    MARIADB_PASSWORD: '!ChangeMe!'
+                    MARIADB_ROOT_PASSWORD: '!ChangeMe!'
+                ports:
+                    - 3306:3306
+                options: >-
+                    --health-cmd="healthcheck.sh --connect --innodb_initialized"
+                    --health-interval=5s
+                    --health-timeout=5s
+                    --health-retries=10
+
+        env:
+            APP_ENV: test
+            DATABASE_URL: 'mysql://root:!ChangeMe!@127.0.0.1:3306/app?serverVersion=10.11.2-MariaDB&charset=utf8mb4'
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Setup PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: '8.4'
+                  extensions: ctype, iconv, intl, pdo_mysql
+                  tools: composer:v2
+                  coverage: none
+
+            - name: Validate composer.json
+              run: composer validate --strict --no-check-publish
+
+            - name: Cache Composer dependencies
+              uses: actions/cache@v4
+              with:
+                  path: ~/.cache/composer
+                  key: composer-${{ hashFiles('composer.lock') }}
+                  restore-keys: composer-
+
+            - name: Install dependencies
+              run: composer install --no-interaction --no-progress --prefer-dist
+
+            - name: Lint container, YAML and Twig
+              run: |
+                  php bin/console lint:container
+                  php bin/console lint:yaml config --parse-tags
+                  php bin/console lint:twig templates
+
+            # dbname_suffix « _test » est ajouté par doctrine.yaml en environnement test.
+            - name: Create database and run migrations
+              run: |
+                  php bin/console doctrine:database:create --if-not-exists
+                  php bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration
+
+            - name: Validate Doctrine mapping against database
+              run: php bin/console doctrine:schema:validate
+
+            - name: Load fixtures
+              run: php bin/console doctrine:fixtures:load --no-interaction
+
+            - name: Run PHPUnit
+              run: |
+                  if find tests -name '*Test.php' | grep -q .; then
+                      vendor/bin/phpunit
+                  else
+                      echo "::notice::Aucun test PHPUnit trouvé dans tests/"
+                  fi

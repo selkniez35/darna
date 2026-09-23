@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94de8310-17f2-49c0-81f9-a10a6aa27c00" name="Changes" comment="Add fixtures for Listing and User entities, updating data seeding logic">
+    <list default="true" id="94de8310-17f2-49c0-81f9-a10a6aa27c00" name="Changes" comment="Update User entity to implement UserInterface and PasswordAuthenticatedUserInterface, modify UserFixtures for password hashing, and adjust ListingFixtures for category reference">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/claude-review.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/claude-review.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/ListingFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/ListingFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +26,9 @@
                     <execution>
                       <execution>
                         <execution>
-                          <execution />
+                          <execution>
+                            <execution />
+                          </execution>
                         </execution>
                       </execution>
                     </execution>
@@ -314,7 +313,7 @@
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;81-creer-les-migrations-et-les-fixtures&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#11 on 81-creer-les-migrations-et-les-fixtures&quot;,
     &quot;git.auto.fetch.suggestion.counter&quot;: &quot;1&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu/var/www/darna&quot;,
@@ -358,7 +357,8 @@
       <workItem from="1788941610296" duration="2964000" />
       <workItem from="1788949523725" duration="2003000" />
       <workItem from="1790016701547" duration="454000" />
-      <workItem from="1790081464070" duration="10786000" />
+      <workItem from="1790081464070" duration="11450000" />
+      <workItem from="1790143916386" duration="2608000" />
     </task>
     <task id="LOCAL-00001" summary="Add Listing entity, controller, and form with CRUD functionality">
       <option name="closed" value="true" />
@@ -464,7 +464,15 @@
       <option name="project" value="LOCAL" />
       <updated>1790096980483</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Update User entity to implement UserInterface and PasswordAuthenticatedUserInterface, modify UserFixtures for password hashing, and adjust ListingFixtures for category reference">
+      <option name="closed" value="true" />
+      <created>1790106696903</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1790106696903</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,7 +493,8 @@
     <MESSAGE value="Rename `createAt` field to `createdAt` in `User` entity, update related methods, fixtures, and add migration." />
     <MESSAGE value="Rename `createAt` to `createdAt` in `User` entity, update fixtures, related methods, and add migration." />
     <MESSAGE value="Add fixtures for Listing and User entities, updating data seeding logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add fixtures for Listing and User entities, updating data seeding logic" />
+    <MESSAGE value="Update User entity to implement UserInterface and PasswordAuthenticatedUserInterface, modify UserFixtures for password hashing, and adjust ListingFixtures for category reference" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update User entity to implement UserInterface and PasswordAuthenticatedUserInterface, modify UserFixtures for password hashing, and adjust ListingFixtures for category reference" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
