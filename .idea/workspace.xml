@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94de8310-17f2-49c0-81f9-a10a6aa27c00" name="Changes" comment="Update `.idea/workspace.xml` to enhance workflow configuration and integrate CI with database and test support">
+    <list default="true" id="94de8310-17f2-49c0-81f9-a10a6aa27c00" name="Changes" comment="chore(workspace): update configuration to enhance CI workflow with database and test support">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/reference.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/reference.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +62,7 @@
     <option name="INCOMING_COMMITS_CHECK_STRATEGY" value="FETCH" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="81-creer-les-migrations-et-les-fixtures" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -76,17 +77,31 @@
     "state": "OPEN"
   }
 }]]></component>
-  <component name="GitHubPullRequestState">{
-  &quot;prStates&quot;: [
+  <component name="GitHubPullRequestState"><![CDATA[{
+  "prStates": [
     {
-      &quot;id&quot;: {
-        &quot;id&quot;: &quot;PR_kwDOULBuCM8AAAABCzM-xA&quot;,
-        &quot;number&quot;: 2
+      "id": {
+        "id": "PR_kwDOULBuCM8AAAABCzM-xA",
+        "number": 2
       },
-      &quot;lastSeen&quot;: 1788949944639
+      "lastSeen": 1788949944639
+    },
+    {
+      "id": {
+        "id": "PR_kwDOULBuCM8AAAABEuzf9Q",
+        "number": 15
+      },
+      "lastSeen": 1790159786575
     }
   ]
-}</component>
+}]]></component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="develop" />
+      </list>
+    </option>
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/selkniez35/darna.git&quot;,
@@ -314,6 +329,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Git.Working.Tree.Tab.closed.by.user": "closed",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -496,7 +512,15 @@
       <option name="project" value="LOCAL" />
       <updated>1790155831064</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="chore(workspace): update configuration to enhance CI workflow with database and test support">
+      <option name="closed" value="true" />
+      <created>1790159336968</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1790159336968</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,7 +545,8 @@
     <MESSAGE value="Add CI workflow for pull request and push actions with PHP, MariaDB setup, and PHPUnit tests; enhance Claude review workflow with database support and test verification." />
     <MESSAGE value="Add initial module files and update package configuration for ES module support" />
     <MESSAGE value="Update `.idea/workspace.xml` to enhance workflow configuration and integrate CI with database and test support" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update `.idea/workspace.xml` to enhance workflow configuration and integrate CI with database and test support" />
+    <MESSAGE value="chore(workspace): update configuration to enhance CI workflow with database and test support" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore(workspace): update configuration to enhance CI workflow with database and test support" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
