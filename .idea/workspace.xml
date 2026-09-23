@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94de8310-17f2-49c0-81f9-a10a6aa27c00" name="Changes" comment="Update workspace configuration to enhance GitHub Actions workflow for Claude PR review" />
+    <list default="true" id="94de8310-17f2-49c0-81f9-a10a6aa27c00" name="Changes" comment="Add CI workflow for pull request and push actions with PHP, MariaDB setup, and PHPUnit tests; enhance Claude review workflow with database support and test verification.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" notifyAboutMissingVendor="false" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <execution>
@@ -19,7 +21,19 @@
             <execution>
               <execution>
                 <execution>
-                  <execution />
+                  <execution>
+                    <execution>
+                      <execution>
+                        <execution>
+                          <execution>
+                            <execution>
+                              <execution />
+                            </execution>
+                          </execution>
+                        </execution>
+                      </execution>
+                    </execution>
+                  </execution>
                 </execution>
               </execution>
             </execution>
@@ -28,9 +42,13 @@
       </execution>
     </execution>
   </component>
+  <component name="DatabaseLocalColorSettings">
+    <colors>
+      <entry key="940c2618-15f2-41d2-bd9d-24679e5c575a" value="" />
+    </colors>
+  </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="10004" />
-    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+    <option name="cachedIndexableFilesCount" value="126" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -43,29 +61,36 @@
     <option name="INCOMING_COMMITS_CHECK_STRATEGY" value="FETCH" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="80-implementer-les-entites-métier" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {}
-}]]></component>
-  <component name="GitHubPullRequestState"><![CDATA[{
-  "prStates": [
+  "history": [
     {
-      "id": {
-        "id": "PR_kwDOULBuCM8AAAABCzM-xA",
-        "number": 2
+      "state": "OPEN"
+    }
+  ],
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOULBuCM8AAAABCzM-xA&quot;,
+        &quot;number&quot;: 2
       },
-      "lastSeen": 1788949944639
+      &quot;lastSeen&quot;: 1788949944639
     }
   ]
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/selkniez35/darna.git&quot;,
-    &quot;accountId&quot;: &quot;fa6553fd-ecc9-4e68-97d3-d297f7a0752c&quot;
+    &quot;accountId&quot;: &quot;57965208-e1d5-41a1-8b20-bf35926e3e6d&quot;
   },
   &quot;recentNewPullRequestHead&quot;: {
     &quot;server&quot;: {
@@ -84,25 +109,6 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="3.0521012381952893E-114" />
-      <entry key="MS500" value="1.9811610770558118E-23" />
-      <entry key="S2" value="2.109744905046076E-6" />
-      <entry key="S5" value="0.005366510441586129" />
-      <entry key="S10" value="0.0732564703052647" />
-      <entry key="S30" value="0.41842329142112034" />
-      <entry key="S60" value="0.6475650035300238" />
-      <entry key="M2" value="0.8308992443056628" />
-      <entry key="M5" value="1.1510489023754031" />
-      <entry key="M10" value="1.4416112615574423" />
-      <entry key="M15" value="1.5880272816351944" />
-      <entry key="M30" value="1.7708556162058966" />
-      <entry key="H1" value="1.8789213670450544" />
-      <entry key="H2" value="1.9377346981218229" />
-      <entry key="H4" value="1.9684227642592391" />
-      <entry key="D1" value="1.9946742361156933" />
-      <entry key="W1" value="1.9992376212606655" />
-    </decayedCancelled>
-    <decayedSelected>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
       <entry key="S2" value="1.0" />
@@ -111,34 +117,53 @@
       <entry key="S30" value="1.0" />
       <entry key="S60" value="1.0" />
       <entry key="M2" value="1.0" />
-      <entry key="M5" value="1.0" />
-      <entry key="M10" value="1.0" />
-      <entry key="M15" value="1.0" />
-      <entry key="M30" value="1.0" />
-      <entry key="H1" value="1.0" />
-      <entry key="H2" value="1.0" />
-      <entry key="H4" value="1.0" />
-      <entry key="D1" value="1.0" />
-      <entry key="W1" value="1.0" />
+      <entry key="M5" value="1.0000000000002354" />
+      <entry key="M10" value="1.0000008562245204" />
+      <entry key="M15" value="1.0001475622730789" />
+      <entry key="M30" value="1.0375617033337619" />
+      <entry key="H1" value="1.8301933363326128" />
+      <entry key="H2" value="5.37106242001663" />
+      <entry key="H4" value="11.344083497371445" />
+      <entry key="D1" value="22.5490464963437" />
+      <entry key="W1" value="25.47419474873127" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="5.84921891351015E-174" />
+      <entry key="S60" value="5.1899554375588395E-87" />
+      <entry key="M2" value="1.6921492531588682E-43" />
+      <entry key="M5" value="2.2850781552472212E-17" />
+      <entry key="M10" value="1.216922996755863E-8" />
+      <entry key="M15" value="1.0093134051674073E-5" />
+      <entry key="M30" value="0.008974286086970706" />
+      <entry key="H1" value="0.29266050728476023" />
+      <entry key="H2" value="1.7537111149381277" />
+      <entry key="H4" value="4.3644653236593784" />
+      <entry key="D1" value="9.42066996307272" />
+      <entry key="W1" value="10.758873647563986" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="6.845069708156487E-13" />
-      <entry key="MS500" value="0.003690418128895337" />
-      <entry key="S2" value="0.24647401676620218" />
-      <entry key="S5" value="0.5754832274418785" />
-      <entry key="S10" value="0.8219592217017712" />
-      <entry key="S30" value="1.315496652393028" />
-      <entry key="S60" value="1.5911880112972288" />
-      <entry key="M2" value="1.8007192217731867" />
-      <entry key="M5" value="2.13727279179731" />
-      <entry key="M10" value="2.433885755699889" />
-      <entry key="M15" value="2.5825907843964644" />
-      <entry key="M30" value="2.767957464809866" />
-      <entry key="H1" value="2.8774188891300554" />
-      <entry key="H2" value="2.9369688984001154" />
-      <entry key="H4" value="2.96803606196764" />
-      <entry key="D1" value="2.99460924330758" />
-      <entry key="W1" value="2.999228323099529" />
+      <entry key="MS100" value="0.3842187953220031" />
+      <entry key="MS500" value="0.8258776649357199" />
+      <entry key="S2" value="0.9532985452881589" />
+      <entry key="S5" value="0.9810509713700406" />
+      <entry key="S10" value="0.9904801721236224" />
+      <entry key="S30" value="0.9968166007640673" />
+      <entry key="S60" value="0.9984070316078845" />
+      <entry key="M2" value="0.9992031983575135" />
+      <entry key="M5" value="0.9996812031237045" />
+      <entry key="M10" value="0.9998414570514514" />
+      <entry key="M15" value="1.0000513264170192" />
+      <entry key="M30" value="1.046463715720846" />
+      <entry key="H1" value="2.122518125284333" />
+      <entry key="H2" value="7.123833591592758" />
+      <entry key="H4" value="15.707388886586932" />
+      <entry key="D1" value="31.969300492807818" />
+      <entry key="W1" value="36.23300055664921" />
     </decayedShown>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
@@ -149,7 +174,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/expression-language" />
       <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/clock" />
-      <path value="$PROJECT_DIR$/vendor/symfony/asset-mapper" />
       <path value="$PROJECT_DIR$/vendor/symfony/runtime" />
       <path value="$PROJECT_DIR$/vendor/symfony/var-exporter" />
       <path value="$PROJECT_DIR$/vendor/symfony/form" />
@@ -271,7 +295,13 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
       <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
       <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/pentatrion/vite-bundle" />
     </include_path>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7,
@@ -291,7 +321,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "#4 on 80-implementer-les-entites-métier",
+    "git-widget-placeholder": "12-automatisation-de-la-review-de-pr-avec-claude",
     "git.auto.fetch.suggestion.counter": "1",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "//wsl.localhost/Ubuntu/var/www/darna",
@@ -300,9 +330,14 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "proofread",
     "to.speed.mode.migration.done": "true"
   },
   "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mariadb",
+      "mysql"
+    ],
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
       "TEXT"
     ]
@@ -311,8 +346,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-PS-262.10315.130" />
-        <option value="bundled-php-predefined-a98d8de5180a-9522f28f0b20-com.jetbrains.php.sharedIndexes-PS-262.10315.130" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-PS-262.10968.76" />
+        <option value="bundled-php-predefined-a98d8de5180a-9522f28f0b20-com.jetbrains.php.sharedIndexes-PS-262.10968.76" />
       </set>
     </attachedChunks>
   </component>
@@ -329,6 +364,9 @@
       <workItem from="1788888995857" duration="1168000" />
       <workItem from="1788941610296" duration="2964000" />
       <workItem from="1788949523725" duration="2003000" />
+      <workItem from="1790016701547" duration="454000" />
+      <workItem from="1790081464070" duration="11450000" />
+      <workItem from="1790143916386" duration="3251000" />
     </task>
     <task id="LOCAL-00001" summary="Add Listing entity, controller, and form with CRUD functionality">
       <option name="closed" value="true" />
@@ -386,7 +424,71 @@
       <option name="project" value="LOCAL" />
       <updated>1788950994112</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add Doctrine fixtures and migration for category and listing entities">
+      <option name="closed" value="true" />
+      <created>1788983288603</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1788983288603</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Migrate from Symfony AssetMapper to Vite, updating bootstrap and configuration files">
+      <option name="closed" value="true" />
+      <created>1790017082838</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1790017082838</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Migrate from Symfony AssetMapper to Vite, updating bootstrap and configuration files">
+      <option name="closed" value="true" />
+      <created>1790083632993</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1790083632993</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Update category entity, fixtures, and dependencies for improved structure and relationships">
+      <option name="closed" value="true" />
+      <created>1790087703578</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1790087703578</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Rename `createAt` to `createdAt` in `User` entity, update fixtures, related methods, and add migration.">
+      <option name="closed" value="true" />
+      <created>1790096561891</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1790096561891</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add fixtures for Listing and User entities, updating data seeding logic">
+      <option name="closed" value="true" />
+      <created>1790096980483</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1790096980483</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Update User entity to implement UserInterface and PasswordAuthenticatedUserInterface, modify UserFixtures for password hashing, and adjust ListingFixtures for category reference">
+      <option name="closed" value="true" />
+      <created>1790106696903</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1790106696903</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Add CI workflow for pull request and push actions with PHP, MariaDB setup, and PHPUnit tests; enhance Claude review workflow with database support and test verification.">
+      <option name="closed" value="true" />
+      <created>1790152614678</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1790152614679</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,6 +502,19 @@
     <MESSAGE value="Add initial configuration files for PHP and version control" />
     <MESSAGE value="Enhance GitHub Actions workflow for Claude PR review with improved permissions and detailed analysis prompts" />
     <MESSAGE value="Update workspace configuration to enhance GitHub Actions workflow for Claude PR review" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update workspace configuration to enhance GitHub Actions workflow for Claude PR review" />
+    <MESSAGE value="Add Doctrine fixtures and migration for category and listing entities" />
+    <MESSAGE value="Replace Asset Mapper with Vite, migrate database to MariaDB, and update related configurations." />
+    <MESSAGE value="Migrate from Symfony AssetMapper to Vite, updating bootstrap and configuration files" />
+    <MESSAGE value="Update category entity, fixtures, and dependencies for improved structure and relationships" />
+    <MESSAGE value="Rename `createAt` field to `createdAt` in `User` entity, update related methods, fixtures, and add migration." />
+    <MESSAGE value="Rename `createAt` to `createdAt` in `User` entity, update fixtures, related methods, and add migration." />
+    <MESSAGE value="Add fixtures for Listing and User entities, updating data seeding logic" />
+    <MESSAGE value="Update User entity to implement UserInterface and PasswordAuthenticatedUserInterface, modify UserFixtures for password hashing, and adjust ListingFixtures for category reference" />
+    <MESSAGE value="Add CI workflow for pull request and push actions with PHP, MariaDB setup, and PHPUnit tests; enhance Claude review workflow with database support and test verification." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add CI workflow for pull request and push actions with PHP, MariaDB setup, and PHPUnit tests; enhance Claude review workflow with database support and test verification." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
