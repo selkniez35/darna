@@ -86,6 +86,28 @@ final class UserControllerTest extends WebTestCase
         );
     }
 
+    public function testAdminCannotCreateUserWithDuplicateEmail(): void
+    {
+        $this->client->loginUser($this->createUser(['ROLE_ADMIN']));
+        $existing = $this->createUser(['ROLE_USER']);
+
+        $this->client->request('GET', '/user/new');
+        $this->client->submitForm('Save', [
+            'user[email]' => $existing->getEmail(),
+            'user[plainPassword]' => 'motdepasse-secret',
+            'user[displayName]' => 'Doublon',
+            'user[phone]' => '0600000000',
+            'user[createdAt]' => '2026-01-01T10:00',
+            'user[updatedAt]' => '2026-01-01T10:00',
+        ]);
+
+        self::assertResponseStatusCodeSame(422);
+        self::assertCount(
+            1,
+            $this->entityManager->getRepository(User::class)->findBy(['email' => $existing->getEmail()])
+        );
+    }
+
     public function testEditWithoutPasswordKeepsCurrentHash(): void
     {
         $this->client->loginUser($this->createUser(['ROLE_ADMIN']));
