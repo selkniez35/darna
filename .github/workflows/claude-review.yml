@@ -43,11 +43,8 @@ jobs:
             - name: Review pull request with Claude
               uses: anthropics/claude-code-action@v1
               with:
-                  anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-
-                  # À conserver temporairement pour diagnostiquer une erreur.
-                  # À supprimer ensuite pour éviter des logs trop détaillés.
-                  show_full_output: true
+                  # Jeton OAuth de l'abonnement Claude (généré via `claude setup-token`).
+                  claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
 
                   prompt: |
                       Review this pull request for the Symfony project.
