@@ -28,3 +28,8 @@
 ###> claude-code ###
 /.claude/settings.local.json
 ###< claude-code ###
+
+###> ide ###
+/.idea/
+/.ai/
+###< ide ###
