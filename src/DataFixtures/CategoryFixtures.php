@@ -25,7 +25,7 @@ final class CategoryFixtures extends Fixture
 
         $vehicles = new Category();
         $vehicles->setName('Véhicules');
-        $vehicles->setSlug('vehicles');
+        $vehicles->setSlug('vehicules');
         $vehicles->setPosition(2);
         $vehicles->setIsActive(true);
 
