@@ -1,0 +1,3 @@
+pentatrion_vite:
+    # Entrypoints are read from vite.config.js (build.rollupOptions.input)
+    build_directory: build
