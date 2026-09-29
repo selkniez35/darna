@@ -1,0 +1,10 @@
+{# Icône d'une catégorie selon son slug, étoile marocaine par défaut #}
+<svg class="{{ class|default('size-6') }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    {% if slug == 'immobilier' %}
+        <path d="M4 21V10.5a8 8 0 0 1 16 0V21"/><path d="M9.5 21v-5a2.5 2.5 0 0 1 5 0v5"/><path d="M2.5 21h19"/>
+    {% elseif slug == 'vehicules' %}
+        <path d="M5 16.5V12l2-5h10l2 5v4.5"/><path d="M3.5 12h17"/><circle cx="7.5" cy="16.5" r="1.8"/><circle cx="16.5" cy="16.5" r="1.8"/><path d="M9.3 16.5h5.4"/>
+    {% else %}
+        <path d="M12 3l2.6 6.3L21 12l-6.4 2.7L12 21l-2.6-6.3L3 12l6.4-2.7z"/>
+    {% endif %}
+</svg>

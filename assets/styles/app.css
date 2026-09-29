@@ -1,3 +1,65 @@
-body {
-    background-color: skyblue;
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/fraunces";
+
+@source "../../templates";
+
+@theme {
+    --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Fraunces Variable", ui-serif, Georgia, serif;
+
+    /* Sable : fonds et surfaces */
+    --color-sand-50: #fcfaf6;
+    --color-sand-100: #f6f1e8;
+    --color-sand-200: #ece3d3;
+    --color-sand-300: #dccdb4;
+
+    /* Encre : texte */
+    --color-ink-900: #1f1a17;
+    --color-ink-700: #4a413b;
+    --color-ink-500: #7a6f66;
+
+    /* Terre cuite de Marrakech : action principale */
+    --color-clay-50: #fbeee8;
+    --color-clay-500: #c0583a;
+    --color-clay-600: #a8472c;
+    --color-clay-700: #8a3923;
+
+    /* Bleu Majorelle : accent */
+    --color-majorelle-50: #eef1fc;
+    --color-majorelle-500: #2e4fc7;
+    --color-majorelle-600: #2340a8;
+    --color-majorelle-900: #141f52;
+}
+
+@layer base {
+    html {
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
+
+    body {
+        @apply bg-sand-50 font-sans text-ink-900;
+    }
+
+    ::selection {
+        @apply bg-clay-500 text-white;
+    }
+}
+
+@utility font-display {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 50, "WONK" 0;
+}
+
+/* Arc outrepassé, la silhouette des portes marocaines */
+@utility arch {
+    border-radius: 999px 999px 1.5rem 1.5rem;
+}
+
+/* Motif zellige : étoile à huit branches (khatam) en filigrane */
+@utility zellige {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='white' stroke-opacity='.22' stroke-width='1'%3E%3Cpath d='M28 8l5.9 14.1L48 28l-14.1 5.9L28 48l-5.9-14.1L8 28l14.1-5.9z'/%3E%3Cpath d='M14 14h28v28H14z' transform='rotate(45 28 28)'/%3E%3Cpath d='M14 14h28v28H14z'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 56px 56px;
 }
