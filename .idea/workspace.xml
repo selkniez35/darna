@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="94de8310-17f2-49c0-81f9-a10a6aa27c00" name="Changes" comment="chore(workspace): update configuration to enhance CI workflow with database and test support">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/reference.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/reference.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +27,11 @@
                         <execution>
                           <execution>
                             <execution>
-                              <execution />
+                              <execution>
+                                <execution>
+                                  <execution />
+                                </execution>
+                              </execution>
                             </execution>
                           </execution>
                         </execution>
@@ -49,7 +52,8 @@
     </colors>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="126" />
+    <option name="cachedIndexableFilesCount" value="138" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -67,34 +71,34 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "history": [
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
     {
-      "state": "OPEN"
+      &quot;state&quot;: &quot;OPEN&quot;
     }
   ],
-  "lastFilter": {
-    "state": "OPEN"
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
-  <component name="GitHubPullRequestState"><![CDATA[{
-  "prStates": [
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
     {
-      "id": {
-        "id": "PR_kwDOULBuCM8AAAABCzM-xA",
-        "number": 2
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOULBuCM8AAAABCzM-xA&quot;,
+        &quot;number&quot;: 2
       },
-      "lastSeen": 1788949944639
+      &quot;lastSeen&quot;: 1788949944639
     },
     {
-      "id": {
-        "id": "PR_kwDOULBuCM8AAAABEuzf9Q",
-        "number": 15
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOULBuCM8AAAABEuzf9Q&quot;,
+        &quot;number&quot;: 15
       },
-      "lastSeen": 1790159786575
+      &quot;lastSeen&quot;: 1790159786575
     }
   ]
-}]]></component>
+}</component>
   <component name="GithubProjectSettings">
     <option name="branchProtectionPatterns">
       <list>
@@ -313,6 +317,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
       <path value="$PROJECT_DIR$/vendor/pentatrion/vite-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/asset-mapper" />
     </include_path>
   </component>
   <component name="ProblemsViewState">
@@ -346,7 +351,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "proofread",
+    "settings.editor.selected.configurable": "terminal",
     "to.speed.mode.migration.done": "true"
   },
   "keyToStringList": {
@@ -383,6 +388,8 @@
       <workItem from="1790016701547" duration="454000" />
       <workItem from="1790081464070" duration="11450000" />
       <workItem from="1790143916386" duration="3251000" />
+      <workItem from="1790323093325" duration="6544000" />
+      <workItem from="1790684831428" duration="85000" />
     </task>
     <task id="LOCAL-00001" summary="Add Listing entity, controller, and form with CRUD functionality">
       <option name="closed" value="true" />
@@ -520,7 +527,15 @@
       <option name="project" value="LOCAL" />
       <updated>1790159336968</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="chore(workspace): update configuration to enhance CI workflow with database and test support">
+      <option name="closed" value="true" />
+      <created>1790181587945</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1790181587945</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
