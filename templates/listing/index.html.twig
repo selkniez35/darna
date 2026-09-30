@@ -28,7 +28,7 @@
                 <td>{{ listing.description }}</td>
                 <td>{{ listing.price }}</td>
                 <td>{{ listing.city }}</td>
-                <td>{{ listing.status }}</td>
+                <td>{{ listing.status.label() }}</td>
                 <td>{{ listing.createdAt ? listing.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ listing.updatedAt ? listing.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ listing.publishedAt ? listing.publishedAt|date('Y-m-d H:i:s') : '' }}</td>
