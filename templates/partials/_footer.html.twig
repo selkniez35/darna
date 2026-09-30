@@ -1,0 +1,28 @@
+<footer class="border-t border-sand-200 bg-sand-100/60">
+    <div class="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-[2fr_1fr_1fr]">
+        <div class="max-w-xs">
+            {% include 'partials/_logo.html.twig' %}
+            <p class="mt-4 text-sm leading-relaxed text-ink-500">
+                Les petites annonces entre particuliers, de Tanger à Dakhla.
+            </p>
+        </div>
+        <div>
+            <h2 class="text-xs font-semibold uppercase tracking-[0.14em] text-ink-500">Explorer</h2>
+            <ul class="mt-4 space-y-2.5 text-sm text-ink-700">
+                <li><a href="{{ path('app_listing_index') }}" class="hover:text-clay-600">Toutes les annonces</a></li>
+                <li><a href="/#categories" class="hover:text-clay-600">Catégories</a></li>
+                <li><a href="/#villes" class="hover:text-clay-600">Villes</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="text-xs font-semibold uppercase tracking-[0.14em] text-ink-500">Vendre</h2>
+            <ul class="mt-4 space-y-2.5 text-sm text-ink-700">
+                <li><a href="{{ path('app_listing_new') }}" class="hover:text-clay-600">Déposer une annonce</a></li>
+                <li><a href="/#fonctionnement" class="hover:text-clay-600">Comment ça marche</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="border-t border-sand-200">
+        <p class="mx-auto max-w-6xl px-5 py-6 text-xs text-ink-500 sm:px-8">© {{ 'now'|date('Y') }} Darna. Fait avec soin au Maroc.</p>
+    </div>
+</footer>
