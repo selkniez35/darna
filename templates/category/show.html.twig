@@ -2,9 +2,10 @@
 
 {% block title %}Category{% endblock %}
 
-{% block body %}
+{% block content %}
     <h1>Category</h1>
 
+    <div class="table-wrapper">
     <table class="table">
         <tbody>
             <tr>
@@ -41,6 +42,7 @@
             </tr>
         </tbody>
     </table>
+    </div>
 
     <a href="{{ path('app_category_index') }}">back to list</a>
 
