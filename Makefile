@@ -3,6 +3,10 @@
 
 CONSOLE = php bin/console
 
+# Sous WSL, PhpStorm place son Node Windows en tête du PATH : on retire les
+# entrées /mnt/* pour utiliser le Node/npm Linux.
+export PATH := $(shell printf '%s' "$$PATH" | tr ':' '\n' | grep -v '^/mnt/' | paste -sd:)
+
 .DEFAULT_GOAL := help
 .PHONY: help install start stop logs dev build \
         controller entity crud form \
