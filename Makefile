@@ -18,7 +18,7 @@ install: ## Installe les dépendances PHP et JS
 	npm install
 
 start: ## Lance le serveur Symfony en arrière-plan
-	symfony serve -d
+	symfony serve
 
 stop: ## Arrête le serveur Symfony
 	symfony server:stop
@@ -31,6 +31,9 @@ dev: ## Lance Vite en mode dev (rechargement à chaud)
 
 build: ## Compile les assets pour la production
 	npm run build
+
+claude: ## Lance Claude pour générer du code
+	claude
 
 ## —— Génération de code (maker) ——
 controller: ## Crée un contrôleur (make controller name=Home)
