@@ -63,3 +63,75 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='white' stroke-opacity='.22' stroke-width='1'%3E%3Cpath d='M28 8l5.9 14.1L48 28l-14.1 5.9L28 48l-5.9-14.1L8 28l14.1-5.9z'/%3E%3Cpath d='M14 14h28v28H14z' transform='rotate(45 28 28)'/%3E%3Cpath d='M14 14h28v28H14z'/%3E%3C/g%3E%3C/svg%3E");
     background-size: 56px 56px;
 }
+
+/*
+ * Composants des pages internes (bloc « content » de base.html.twig).
+ * Les classes .table et .btn sont celles générées par le maker Symfony.
+ */
+@layer components {
+    main h1 {
+        @apply font-display text-3xl font-medium tracking-tight text-ink-900 sm:text-4xl;
+    }
+
+    /* Tableaux larges : défilement horizontal sur mobile plutôt qu'un débordement de page */
+    .table-wrapper {
+        @apply my-8 overflow-x-auto rounded-2xl border border-sand-200 bg-white;
+    }
+
+    .table {
+        @apply w-full text-left text-sm;
+
+        th, td {
+            @apply border-b border-sand-200 px-4 py-3 align-top;
+        }
+
+        thead th, tbody th {
+            @apply font-semibold whitespace-nowrap text-ink-500;
+        }
+
+        thead th {
+            @apply bg-sand-100/60 text-xs tracking-[0.08em] uppercase;
+        }
+
+        tbody tr:last-child > * {
+            @apply border-b-0;
+        }
+
+        a {
+            @apply font-medium text-clay-600 hover:text-clay-700;
+        }
+
+        a + a {
+            @apply ml-3;
+        }
+    }
+
+    .btn {
+        @apply inline-flex cursor-pointer items-center justify-center rounded-full bg-ink-900 px-5 py-2.5 text-sm font-medium text-sand-50 transition hover:bg-clay-600;
+    }
+
+    /* Champs rendus par form_widget() : un champ par ligne, pleine largeur */
+    main form[name] {
+        @apply my-8 max-w-2xl space-y-5;
+
+        label {
+            @apply mb-1.5 block text-sm font-medium text-ink-700;
+        }
+
+        input:not([type=checkbox], [type=radio], [type=hidden]), select, textarea {
+            @apply block w-full rounded-xl border border-sand-300 bg-white px-4 py-2.5 text-ink-900 focus:border-clay-500 focus:ring-2 focus:ring-clay-500/20 focus:outline-none;
+        }
+
+        input[type=checkbox], input[type=radio] {
+            @apply mr-2 accent-clay-500;
+        }
+
+        :is(input[type=checkbox], input[type=radio]) + label {
+            @apply inline;
+        }
+
+        ul li {
+            @apply text-sm text-clay-700;
+        }
+    }
+}

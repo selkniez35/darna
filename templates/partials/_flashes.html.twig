@@ -1,0 +1,18 @@
+{% set flash_styles = {
+    success: 'border-emerald-200 bg-emerald-50 text-emerald-900',
+    error: 'border-clay-500/30 bg-clay-50 text-clay-700',
+    warning: 'border-amber-200 bg-amber-50 text-amber-900',
+} %}
+{% set flashes = app.flashes %}
+{% if flashes is not empty %}
+    <div class="mx-auto max-w-6xl space-y-3 px-5 pt-6 sm:px-8">
+        {% for type, messages in flashes %}
+            {% for message in messages %}
+                <p role="{{ type == 'error' ? 'alert' : 'status' }}"
+                   class="rounded-2xl border px-4 py-3 text-sm {{ flash_styles[type]|default('border-majorelle-500/20 bg-majorelle-50 text-majorelle-900') }}">
+                    {{ message|trans }}
+                </p>
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endif %}

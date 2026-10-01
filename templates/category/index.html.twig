@@ -2,9 +2,10 @@
 
 {% block title %}Category index{% endblock %}
 
-{% block body %}
+{% block content %}
     <h1>Category index</h1>
 
+    <div class="table-wrapper">
     <table class="table">
         <thead>
             <tr>
@@ -42,6 +43,7 @@
         {% endfor %}
         </tbody>
     </table>
+    </div>
 
     <a href="{{ path('app_category_new') }}">Create new</a>
 {% endblock %}

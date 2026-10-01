@@ -2,19 +2,24 @@ import { Controller } from '@hotwired/stimulus';
 
 // Ouvre et ferme le menu de navigation sur mobile.
 export default class extends Controller {
-    static targets = ['panel', 'button'];
+    static targets = ['panel', 'button', 'openIcon', 'closeIcon'];
 
     toggle() {
-        const open = this.panelTarget.hidden;
-        this.panelTarget.hidden = !open;
-        this.buttonTarget.setAttribute('aria-expanded', String(open));
+        this.#setOpen(this.panelTarget.hidden);
     }
 
     close(event) {
-        if (event.type === 'keydown' && event.key !== 'Escape') {
+        if (event?.type === 'keydown' && event.key !== 'Escape') {
             return;
         }
-        this.panelTarget.hidden = true;
-        this.buttonTarget.setAttribute('aria-expanded', 'false');
+        this.#setOpen(false);
+    }
+
+    #setOpen(open) {
+        this.panelTarget.hidden = !open;
+        this.buttonTarget.setAttribute('aria-expanded', String(open));
+        this.buttonTarget.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+        this.openIconTarget.toggleAttribute('hidden', open);
+        this.closeIconTarget.toggleAttribute('hidden', !open);
     }
 }
